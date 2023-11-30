@@ -1,15 +1,65 @@
+body {
+   font-family: Roboto, sans-serif;
+   font-size: 16px;
+   background-color: #fff;
+   color: #434455;
+}
+
+ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+h1, h2, h3, h4 {
+   margin: 0;
+   padding: 0;
+}
+
+p {
+   margin: 0;
+   padding: 0;
+}
+
+a {
+   text-decoration: none;
+}
+
+.container {
+   width: 1158px;
+   padding: 0 15px;
+   margin: 0 auto;
+}
+
+.section {
+   padding-top: 120px;
+   padding-bottom: 120px;
+}
+
 /* Header */
 .page-header {
-   background-color:#E7E9FC;
+   border-bottom: 1px solid var(--CORNFLOWER, #E7E9FC);
+   background: var(--WHITE, #FFF);
+   width: 1440px;
+   height: 72px;
+   border-bottom: 1px solid var(--CORNFLOWER, #E7E9FC);
+
+   display: flex;
+   align-items: center;
+}
+
+.main-nav {
+   display: flex;
 }
 
 .page-nav {
    font-family: Roboto;
    font-size: 16px;
    font-weight: 500;
-   letter-spacing: 0.32px;
+   letter-spacing: 0.02em;
    text-decoration: none;
-   list-style-type: none;
+
+   display: flex;
 }
 
 .page-nav .link:hover,
@@ -20,6 +70,13 @@
 .link-list {
    text-decoration: none;
    list-style-type: none;
+
+   display: flex;
+   margin-left: 76px;
+}
+
+.link-list-item:not(:last-child) {
+   margin-right: 40px;
 }
 
 .link-list .link {
@@ -33,7 +90,7 @@
    font-size: 18px;
    font-weight: 700;
    line-height: 1.17;
-   letter-spacing: 0.54px;
+   letter-spacing: 0.03em;
    text-transform: uppercase;
    color: #4d5ae5;
    text-decoration: none;
@@ -45,17 +102,24 @@
 
 .contacts {
    font-style: normal;
+   margin-left: auto;
 }
 
 .contacts-list {
    text-decoration: none;
    list-style-type: none;
    letter-spacing: 0.02em;
+
+   display: flex;
 }
 
 .contacts-list-item {
    letter-spacing: 0.02em;
    color: #434455;
+}
+
+.contacts-list-item:not(:last-child) {
+   margin-right: 40px;
 }
 
 .contacts-link {
@@ -71,26 +135,21 @@
    letter-spacing: 0.02em;
 }
 
-/* Body */
-body {
-   font-family: Roboto, sans-serif;
-   font-size: 16px;
-   background-color: #fff;
-   color: #434455;
-}
-
-/* Page title */
-.title-background {
-   background-color: #2E2F42;
+/* Hero title */
+.hero-title {
+   background: var(--NAVY-BLUE, #2E2F42);
+   width: 1440px;
+   height: 600px;
 }
 
 .page-title {
    font-size: 56px;
    font-weight: 700;
    line-height: 1.07;
-   letter-spacing: 1.12px;
+   letter-spacing: 0.02em;
    color: #FFFFFF;
    text-align: center;
+   padding-top: 188px;
 }
 
 .page-button {
@@ -100,7 +159,16 @@ body {
    font-family: inherit;
    font-weight: 500;
    line-height: 1.5;
-   letter-spacing: 0.64px;
+   letter-spacing: 0.02em;
+
+   display: block;
+   padding: 16px 32px;
+   align-items: center;
+   gap: 10px;
+   margin-top: 48px;
+   margin-left: auto;
+   margin-right: auto;
+   margin-bottom: 188px;
 }
 
 .page-button:hover,
@@ -110,59 +178,107 @@ body {
 
 /* Features */
 
+.visually-hidden {
+   position: absolute;
+   width: 1px;
+   height: 1px;
+   margin: -1px;
+   border: 0;
+   padding: 0;
+   white-space: nowrap;
+   clip-path: inset(100%);
+   clip: rect(0 0 0 0);
+   overflow: hidden;
+}
+
 .feature-list {
    text-decoration: none;
    list-style-type: none;
+
+   display: flex;
+}
+
+.feature-list-item {
+   width: calc((100% - 72px) / 4);
+   height: 104px;
+
+   flex-direction: column;
+   align-items: flex-start;
+   gap: 8px;
+}
+
+.feature-list-item:not(:last-child) {
+   margin-right: 24px;
 }
 
 .feature-list-title {
    font-size: 20px;
    font-weight: 500;
    line-height: 1.2;
-   letter-spacing: 0.4px;
+   letter-spacing: 0.02em;
    color: #2E2F42;
 }
 
 .feature-list .text {
    line-height: 1.5;
-   letter-spacing: 0.32px;
+   letter-spacing: 0.02em;
 }
 
 /* Team */
-.team-section {
-   background-color: #F4F4FD;
+.section.section.team {
+   background: var(--CLOUD, #F4F4FD);
 }
 
 .team-section-title {
    font-size: 36px;
    font-weight: 700;
    line-height: 1.11;
-   letter-spacing: 0.72px;
+   letter-spacing: 0.02em;
    text-transform: capitalize;
    text-align: center;
    color: #2E2F42;
+
+   padding-bottom: 72px;
+   padding-right: auto;
+   padding-left: auto;
 }
 
 .team-list {
    text-decoration: none;
    list-style-type: none;
+
+   display: flex;
+   width: calc((100% - 72px) / 4);
 }
 
 .team-list-item {
    background-color: #FFFFFF;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 8px;
+   padding-bottom: 32px;
+}
+
+.team-list-item:not(:last-child) {
+   margin-right: 24px;
 }
 
 .team-list-title {
    font-size: 20px;
    font-weight: 500;
    line-height: 1.2;
-   letter-spacing: 0.4px;
+   letter-spacing: 0.02em;
    color: #2E2F42;
+
+   padding-top: 32px;
 }
 
 .team-list .text {
    line-height: 1.5;
-   letter-spacing: 0.32px;
+   letter-spacing: 0.02em;
 }
 
 /* Portfolio */
@@ -170,7 +286,7 @@ body {
    font-size: 36px;
    font-weight: 700;
    line-height: 1.11;
-   letter-spacing: 0.72px;
+   letter-spacing: 0.02em;
    text-transform: capitalize;
    text-align: center;
    color: #2E2F42;
@@ -179,24 +295,52 @@ body {
 .portfolio-list {
    text-decoration: none;
    list-style-type: none;
+
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.portfolio-list-item {
+   width: calc((100% - 48px) / 3);
+   margin-right: 24px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: flex-start;
+   gap: 8px;
+   align-self: stretch;
+
+   border: 1px solid var(--CORNFLOWER, #E7E9FC);
+}
+
+.portfolio-list-item:nth-child(3n) {
+   margin-right: 0;
+}
+
+.portfolio-list-item:nth-child(-n + 3) {
+   margin-bottom: 48px;
 }
 
 .portfolio-list-title {
    font-size: 20px;
    font-weight: 500;
    line-height: 1.2;
-   letter-spacing: 0.4px;
+   letter-spacing: 0.02em;
    color: #2E2F42;
+   padding: 0 16px;
 }
 
 .portfolio-list .text {
    line-height: 1.5;
-   letter-spacing: 0.32px;
+   letter-spacing: 0.02em;
+   padding: 0 16px;
 }
 
 /* Footer */
 .page-footer {
    background-color: #2E2F42;
+   width: 1440px;
+   height: 312px;
 }
 
 .logo-footer {
@@ -204,7 +348,7 @@ body {
    font-size: 18px;
    font-weight: 700;
    line-height: 1.17;
-   letter-spacing: 0.54px;
+   letter-spacing: 0.03em;
    text-transform: uppercase;
    color: #4d5ae5;
    text-decoration: none;
@@ -217,6 +361,6 @@ body {
 .footer-text {
    font-size: 16px;
    line-height: 1.5;
-   letter-spacing: 0.32px;
+   letter-spacing: 0.02em;
    color: #F4F4FD;
 }
